@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Stock Market — Your Portfolio Is the Painting</title>
+  <meta name="description" content="RED, BLUE, YELLOW as living stocks. Trade with $100 and watch your portfolio paint the canvas." />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="swatch swatch-r"></span>
+      <span class="swatch swatch-b"></span>
+      <span class="swatch swatch-y"></span>
+      <h1>Color Stock Market</h1>
+    </div>
+    <p class="tagline">Your portfolio <em>is</em> the painting.</p>
+  </header>
+
+  <main class="layout">
+    <section class="canvas-wrap">
+      <div id="sketch-holder"></div>
+      <p class="hint">
+        Keys: <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> buy RED/BLUE/YELLOW ·
+        <kbd>Q</kbd>/<kbd>W</kbd>/<kbd>E</kbd> sell · <kbd>Space</kbd> pause
+      </p>
+    </section>
+
+    <aside class="panel" id="panel">
+      <div class="cash-row">
+        <div>
+          <div class="label">Cash</div>
+          <div class="cash" id="cash">$100.00</div>
+        </div>
+        <div>
+          <div class="label">Net worth</div>
+          <div class="networth" id="networth">$100.00</div>
+        </div>
+      </div>
+      <div id="stocks"></div>
+      <div class="controls">
+        <button id="btn-pause">Pause</button>
+        <button id="btn-reset">Reset market</button>
+        <button id="btn-export">Export CSV</button>
+      </div>
+      <div class="news">
+        <div class="label">Market wire</div>
+        <div id="news">Market opens. RED $20 · BLUE $20 · YELLOW $20.</div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <span>p5.js · 3 price variables · random-walk market</span>
+  </footer>
+
+  <script src="js/market.js"></script>
+  <script src="js/portfolio.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/sketch.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
