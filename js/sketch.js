@@ -29,6 +29,8 @@ function draw() {
   paintBackground();
   paintStrokes();
   paintGrain();
+  drawTickerBar();
+  drawSparklines(12, 76, Math.min(360, width - 24), 90);
   updateHUD();
 }
 
