@@ -22,9 +22,12 @@ function setup() {
 
 function draw() {
   if (!paused) {
-    stepMarket();
-    maybeMarketEvent();
-    layStroke();
+    const steps = typeof SPEEDS !== "undefined" ? SPEEDS[speedIdx] : 1;
+    for (let s = 0; s < steps; s++) {
+      stepMarket();
+      maybeMarketEvent();
+      layStroke();
+    }
   }
   paintBackground();
   paintStrokes();

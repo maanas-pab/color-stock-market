@@ -44,6 +44,7 @@ function buildUI() {
     paused = !paused;
     syncPauseButton();
   });
+  document.getElementById("btn-speed")?.addEventListener("click", cycleSpeed);
   document.getElementById("btn-reset")?.addEventListener("click", () => {
     resetMarket();
     strokes = [];
@@ -79,6 +80,17 @@ function updateHUD() {
 function syncPauseButton() {
   const btn = document.getElementById("btn-pause");
   if (btn) btn.textContent = paused ? "Resume" : "Pause";
+}
+
+const SPEEDS = [1, 2, 4];
+let speedIdx = 0;
+
+/** Cycle 1× → 2× → 4× simulation speed. */
+function cycleSpeed() {
+  speedIdx = (speedIdx + 1) % SPEEDS.length;
+  const btn = document.getElementById("btn-speed");
+  if (btn) btn.textContent = `Speed: ${SPEEDS[speedIdx]}×`;
+  if (typeof frameRate !== "undefined") frameRate(30 * SPEEDS[speedIdx]);
 }
 
 function pushNews(msg) {

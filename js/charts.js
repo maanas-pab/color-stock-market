@@ -10,12 +10,7 @@ const CHART_COLORS = {
   YELLOW: [200, 160, 10],
 };
 
-function paintTicker() {
-  drawTickerBar();
-}
-
-/** Translucent dark strip with live prices. Called from updateHUD? No —
- *  drawn in canvas space each frame for crisp text. */
+/** Translucent dark strip with live prices, drawn in canvas space. */
 function drawTickerBar() {
   const p = getPrices();
   noStroke();
