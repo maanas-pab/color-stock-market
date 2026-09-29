@@ -1,5 +1,7 @@
 # 🎨📈 Color Stock Market
 
+**▶ Play it live: https://maanas-pab.github.io/color-stock-market/**
+
 **Treat RED, BLUE, and YELLOW as stocks. Your portfolio IS the art.**
 
 You start with **$100**. Three color-stocks tick with a random walk. Buy low,
